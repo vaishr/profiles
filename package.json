@@ -1,0 +1,19 @@
+{
+  "name": "prepProj",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~4.13.4",
+    "fs": "~0.0.2",
+    "lodash": "~4.13.1",
+    "request-promise": "~3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
