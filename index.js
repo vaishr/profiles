@@ -2,7 +2,6 @@ var express = require('express');
 var fs = require('fs');
 var _ = require('lodash');
 var engines = require('consolidate');
-
 var users = [];
 
 var app = express();
@@ -21,12 +20,9 @@ app.engine('hbs', engines.handlebars);
 app.set('views', './views');
 app.set('view engine', 'hbs');
 
+app.use('/profilepics', express.static('images'));
+
 app.get('/', function(req, res) {
-    // var buffer = '';
-  // users.forEach(function (user) {
-  //   buffer += '<a href="/' + user.username + '">' + user.name.full + '</a><br>';
-  // });
-  // res.send(buffer);
   res.render('index', {users: users});
 });
 
@@ -36,7 +32,7 @@ app.get('/userobj', function(req, res) {
 
 app.get('/:username', function(req, res) {
   var username = req.params.username;
-  res.send(username);
+  res.render('user', {username: username});
 })
 
 

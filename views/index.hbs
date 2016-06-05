@@ -6,10 +6,11 @@
 </head>
 <body>
   <h1>User List</h1>
-  <ul>
     {{#each users as |user|}}
-    <li><a href="/{{user.username}}">{{user.name.full}}</a></li>
+    <div>
+      <img src="profilepics/{{user.username}}_med.jpg">
+      <a href="/{{user.username}}">{{user.name.full}}</a>
+    </div>
     {{/each}}
-  </ul>
 </body>
 </html>
